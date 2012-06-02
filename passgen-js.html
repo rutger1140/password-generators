@@ -13,23 +13,16 @@
   </style>
   <script>
 
-    // Get Query Variables from window.location
-    function getQueryVar(variable) {
-      var query = window.location.search.substring(1);
-      var vars = query.split("&");
-      for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-        if (pair[0] === variable) {
-          return unescape(pair[1]);
-        }
-      }
-      return false;
-    }
+  /**
+   * Password generator script
+   * @author  Rutger Laurman (github.com/lekkerduidelijk)
+   */
 
+    // Set defaults
     var passamount, passlength, passmemo;
-    passamount = getQueryVar('a') || 5;
-    passlength = getQueryVar('l') || 8;
-    passmemo = getQueryVar('m') || false;
+    passamount = 5;
+    passlength = 8;
+    passmemo = false;
 
     // https://github.com/bermi/password-generator/blob/master/lib/password-generator.js
     var consonant, letter, password, vowel;
@@ -100,10 +93,10 @@
 
   <h1>Password generator</h1>
   <p id="predefined">
-    <a href="?a=5&amp;l=8" onclick="createFields(5,8); return false">Default</a> |
-    <a href="?a=5&amp;l=24" onclick="createFields(5,24); return false" title="24 chars">MySQL</a> |
-    <a href="?a=5&amp;l=12" onclick="createFields(5,12); return false">12</a> |
-    <a href="?a=5&amp;l=16" onclick="createFields(5,16); return false">16</a>
+    <a href="" onclick="createFields(5,8); return false">Default</a> |
+    <a href="" onclick="createFields(5,24); return false" title="24 chars">MySQL</a> |
+    <a href="" onclick="createFields(5,12); return false">12</a> |
+    <a href="" onclick="createFields(5,16); return false">16</a>
   </p>
   <form method="get">
     <fieldset>
